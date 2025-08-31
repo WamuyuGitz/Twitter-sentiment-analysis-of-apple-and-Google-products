@@ -26,19 +26,6 @@ class TweetRequest(BaseModel):
 def read_root():
     return {'message': 'Twitter Sentiments Model API'}
 
-# @app.post("/predict")
-# def predict(request: TweetRequest):
-#     """
-#     Predict sentiments for a list of tweets.
-#     """
-#     # Pass raw text directly to the pipeline (TF-IDF will handle preprocessing)
-#     predictions = model.predict(request.tweets)
-
-#     # Map predictions to class labels
-#     predicted_labels = [class_names[p] for p in predictions]
-
-#     return {"tweets": request.tweets, "predictions": predicted_labels}
-
 @app.post("/predict")
 def predict(request: TweetRequest):
     try:
@@ -47,3 +34,25 @@ def predict(request: TweetRequest):
         return {"predictions": predictions.tolist()}
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
+# @app.post("/predict")
+# def predict(request: TweetRequest):
+#     if model is None:
+#         return JSONResponse(
+#             status_code=500,
+#             content={"error": "Model not loaded. Check server logs."}
+#         )
+#     try:
+#         # Convert list of tweets to DataFrame (matching your pipeline)
+#         df = pd.DataFrame(request.tweets, columns=["text"])
+        
+#         # Predict sentiments
+#         predictions = model.predict(df)
+        
+#         # Map each tweet to its prediction
+#         results = [{"tweet": tweet, "prediction": pred} for tweet, pred in zip(request.tweets, predictions)]
+        
+#         return {"predictions": results}
+    
+#     except Exception as e:
+#         return JSONResponse(status_code=500, content={"error": str(e)})
