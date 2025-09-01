@@ -1,4 +1,4 @@
-# Phase 4 ML Project
+<img width="1536" height="1024" alt="tweet_sentiment" src="https://github.com/user-attachments/assets/3383eb0b-bb21-4227-9473-f22c984363ec" />
 
 # 📊 Twitter Sentiment Analysis of Apple and Google Products 
 **Understanding Public Sentiment on Apple and Google Products via Twitter**
