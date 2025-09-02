@@ -29,11 +29,35 @@ def read_root():
 @app.post("/predict")
 def predict(request: TweetRequest):
     try:
-        df = pd.DataFrame(request.tweets, columns=["text"])
+        # Build DataFrame correctly from list of strings
+        df = pd.DataFrame({"text": request.tweets})
+
+        # Predict
         predictions = model.predict(df)
-        return {"predictions": predictions.tolist()}
+
+        # Map numeric predictions to labels
+        label_map = {0: "negative", 1: "positive", 2: "neutral"}
+        mapped_predictions = [label_map.get(pred, "unknown") for pred in predictions]
+
+        # Return each tweet alongside its prediction
+        results = [
+            {"tweet": tweet, "sentiment": sentiment}
+            for tweet, sentiment in zip(request.tweets, mapped_predictions)
+        ]
+
+        return {"predictions": results}
+
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
+# @app.post("/predict")
+# def predict(request: TweetRequest):
+#     try:
+#         df = pd.DataFrame(request.tweets, columns=["text"])
+#         predictions = model.predict(df)
+#         return {"predictions": predictions.tolist()}
+#     except Exception as e:
+#         return JSONResponse(status_code=500, content={"error": str(e)})
 
 # @app.post("/predict")
 # def predict(request: TweetRequest):
