@@ -71,7 +71,7 @@ It will:
 
 ---
 
-📊 Key Insights
+## 📊 Key Insights
 
 Random Forest emerged as the most effective model overall, balancing accuracy and reliability.
 
@@ -81,7 +81,7 @@ The sentiment classification task achieved high accuracy (>85%), indicating stro
 
 Tech brands consistently attract positive sentiment online, with Apple leading in engagement and positivity.
 
-💡 Recommendations
+## 💡 Recommendations
 
 Leverage sentiment analysis as a tool for real-time brand monitoring, enabling early detection of shifts in public opinion.
 
@@ -91,7 +91,7 @@ Investigate negative sentiment spikes to uncover pain points, competitor influen
 
 Deploy the Random Forest model into production to drive reliable, scalable sentiment analysis for decision-making.
 
-✅ Conclusion
+## ✅ Conclusion
 
 The dataset offers valuable insights into customer sentiment trends across major tech brands.
 
