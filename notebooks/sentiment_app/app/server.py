@@ -7,7 +7,7 @@ import os
 import pandas as pd
 
 BASE_DIR = os.path.dirname(__file__)
-PIPELINE_PATH = os.path.join(BASE_DIR, "pipeline.pkl")  # name is fine
+PIPELINE_PATH = os.path.join(BASE_DIR, "best_model_random_forest.pkl") 
 
 model = joblib.load(PIPELINE_PATH)
 
