@@ -82,6 +82,11 @@ The sentiment classification task achieved high accuracy (>85%), indicating stro
 
 Tech brands consistently attract positive sentiment online, with Apple leading in engagement and positivity.
 
+Below is a link to access the trained model
+
+[Twitter Sentiment prediction model](https://twitter-sentiment-analysis-of-apple-and.onrender.com/docs)
+
+
 ## 💡 Recommendations
 
 Leverage sentiment analysis as a tool for real-time brand monitoring, enabling early detection of shifts in public opinion.
